@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Akordiyon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 80%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  position:relative
+}
+
+.accordion label{
+	width: 97%;
+	position:absolute;
+}
+
+.accordion label:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+    transition: margin-top 0.2s ease-out;
+}
+
+input[type=checkbox]:checked ~ label:after {
+  content: "\2212";
+  margin-top: 50px;
+  
+}
+
+.panel {
+  width:95%;
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-top:30px;
+}
+
+input[type=checkbox]:checked ~ .panel{
+	max-height:100px;
+}
+</style>
+</head>
+<body>
+
+<div class="accordion">
+	<input type="checkbox" id="cb1" style="display:none;"><label for="cb1">Section 1</label>
+	<div class="panel">
+	  <p>1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</div>
+	<span class="icon"></span>
+</div>
+
+<div class="accordion">
+	<input type="checkbox" id="cb2" style="display:none;"><label for="cb2">Section 2</label>
+	<div class="panel">
+	  <p>2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</div>
+</div>
+<div class="accordion">
+	<input type="checkbox" id="cb3" style="display:none;"><label for="cb3">Section 3</label>
+	<div class="panel">
+	  <p>3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</div>
+</div>
+
+
+</body>
+</html>
